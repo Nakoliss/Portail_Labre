@@ -6,28 +6,37 @@
     background-color: #222222;
 }
 
-.text {
-    color: #6f6f6f;
+.bonjour {
+    color: #fe6600;
 }
 
 .navbar {
     background-color: #222222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
 }
 
-OUBLIE JAMAIS DE SAUVEGARDER !!!! HA HA HA HA !! .navbar ul {
+.navbar .menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     display: flex;
-    justify-content: center;
 }
 
 .navbar li {
     float: none;
 }
 
-.navbar li a {
+.navbar li a,
+.navbar .right-align a {
     display: block;
     color: #6f6f6f;
     text-align: center;
@@ -35,7 +44,47 @@ OUBLIE JAMAIS DE SAUVEGARDER !!!! HA HA HA HA !! .navbar ul {
     text-decoration: none;
 }
 
-.navbar li a:hover {
+.navbar li a:hover,
+.navbar .right-align a:hover {
     background-color: #fe6600;
     color: black;
+}
+
+.center-box {
+    background-color: #fe6600;
+    margin-top: 1in;
+    padding: 20px;
+    text-align: left;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-box h1 {
+    text-align: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
