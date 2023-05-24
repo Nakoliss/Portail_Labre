@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #222222;
+}
+
+.text {
+    color: #6f6f6f;
+}
+
+.navbar {
+    background-color: #222222;
+}
+
+OUBLIE JAMAIS DE SAUVEGARDER !!!! HA HA HA HA !! .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    float: none;
+}
+
+.navbar li a {
+    display: block;
+    color: #6f6f6f;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #fe6600;
+    color: black;
+}
