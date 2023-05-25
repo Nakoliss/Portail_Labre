@@ -1,3 +1,6 @@
+Pour ajouter un champ texte à votre page d'administration, vous pouvez utiliser
+l'élément HTML `textarea`. Voici comment vous pouvez l'intégrer dans votre page
+: ```html
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -14,11 +17,35 @@
             <h1>Administration</h1>
         </div>
 
+        <div class="message-box">
+            <form id="messageForm">
+                <label for="message">Modifier le message du portail :</label>
+                <textarea id="message" name="message"></textarea>
+                <div class="button-container">
+                    <input type="submit" value="Mettre à jour" />
+                </div>
+            </form>
+        </div>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             $(function () {
                 $("#navbar").load("navbar.html");
+
+                const portalMessage = localStorage.getItem("portalMessage");
+                if (portalMessage) {
+                    document.getElementById("message").value = portalMessage;
+                }
             });
+
+            document
+                .getElementById("messageForm")
+                .addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    const message = document.getElementById("message").value;
+                    localStorage.setItem("portalMessage", message);
+                    window.location.href = "index.html";
+                });
         </script>
     </body>
 </html>

@@ -12,35 +12,21 @@
         <div class="page-title"><h1>Portail</h1></div>
         <div class="center-box">
             <h2>Message:</h2>
-            <p>
-                <em
-                    >Un message va apparaître ci-bas. Il pourra être changé dans
-                    administration.</em
-                >
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Facilis at quae, cumque porro nesciunt hic rerum reiciendis ab
-                facere provident? Beatae, aliquam assumenda culpa deserunt neque
-                quibusdam hic tempora magnam? Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Corporis adipisci illo soluta
-                totam expedita sit magni magnam, dignissimos similique! Dicta,
-                voluptates accusantium. Aperiam modi pariatur molestias facere
-                ex autem voluptatibus?Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Quo quis autem laboriosam doloribus
-                consequatur ut quam, rerum consequuntur delectus temporibus
-                incidunt ab, molestias eum? Assumenda minus itaque consequuntur
-                magni quae? Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Numquam laboriosam quam eos ipsum voluptate, autem
-                corrupti quod eum molestiae qui impedit adipisci mollitia nihil
-                repudiandae provident nostrum repellat sed
-            </p>
+
+            <p id="portalMessage"></p>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         <script>
             $(function () {
                 $("#navbar").load("navbar.html");
+
+                const portalMessage = localStorage.getItem("portalMessage");
+                if (portalMessage) {
+                    document.getElementById("portalMessage").innerText =
+                        portalMessage;
+                }
             });
         </script>
     </body>
