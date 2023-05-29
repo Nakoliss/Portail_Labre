@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     background-color: #fffdfa;
@@ -138,35 +144,4 @@ h1 {
 .button-container {
     text-align: left;
     margin-top: 10px;
-}
-
-.login-container {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-
-#loginH2 {
-    text-align: center;
-}
-
-input[type="text"],
-input[type="password"] {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }

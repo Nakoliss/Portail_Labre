@@ -6,13 +6,8 @@ $(function () {
 
     // Check if portalMessage exists
     if (portalMessage) {
-        // Split the portalMessage into an array of paragraphs based on line breaks (\n)
-        const paragraphs = portalMessage.split("\n");
-
-        // Map over each paragraph and wrap it in <p> tags
-        const formattedMessage = paragraphs
-            .map((paragraph) => `<p>${paragraph}</p>`)
-            .join(""); // Join the formatted paragraphs into a single string
+        // Replace newline characters with <br> tags
+        const formattedMessage = portalMessage.replace(/\n/g, "<br>");
 
         // Set the formattedMessage as the HTML content of the #portalMessage element
         $("#portalMessage").html(formattedMessage);
