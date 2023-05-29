@@ -9,25 +9,17 @@
     </head>
     <body>
         <div id="navbar"></div>
-        <div class="page-title"><h1>Portail</h1></div>
+        <div class="page-title">
+            <h1>Portail</h1>
+        </div>
         <div class="center-box">
             <h2>Message:</h2>
-
             <p id="portalMessage"></p>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        <script>
-            $(function () {
-                $("#navbar").load("navbar.html");
-
-                const portalMessage = localStorage.getItem("portalMessage");
-                if (portalMessage) {
-                    document.getElementById("portalMessage").innerText =
-                        portalMessage;
-                }
-            });
-        </script>
+        <script src="loadNavbar.js"></script>
+        <script src="displayMessage.js"></script>
+        <script src="logout.js"></script>
     </body>
 </html>
