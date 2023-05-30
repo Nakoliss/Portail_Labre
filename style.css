@@ -141,7 +141,45 @@ h1 {
     height: 200px; /* adjust this value for the height */
 }
 
-.button-container {
+.button-text {
     text-align: left;
+    margin-top: 5px;
+}
+.button-text input[type="submit"] {
+    padding: 2px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    white-space: normal;
+    vertical-align: top;
+}
+
+#loginWindowContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#loginWindowContent {
+    padding: 20px;
+}
+
+#closeLoginWindow {
     margin-top: 10px;
 }
