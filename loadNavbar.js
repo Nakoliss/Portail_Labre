@@ -1,14 +1,26 @@
-$(function () {
-    $("#navbar").load("navbar.html", function () {
-        const loggedIn = "N"; //
+let loggedIn = sessionStorage.getItem("isLoggedIn") === "true" || false;
 
-        if (loggedIn === "N") {
+console.log("loggedIn:", loggedIn); // Display the value of loggedIn in the console
+
+$(function () {
+    // Load the navbar content
+    $("#navbar").load("navbar.html", function () {
+        if (!loggedIn) {
             showLoginWindow();
         }
-    });
 
-    $("#closeLoginWindow").click(function () {
-        hideLoginWindow();
+        $("#loginButton").click(function () {
+            loggedIn = true;
+            sessionStorage.setItem("isLoggedIn", "true"); // Store the loggedIn status in localStorage as a string
+            console.log("loggedIn:", loggedIn); // Display the value of loggedIn in the console
+            hideLoginWindow();
+        });
+
+        $("#logoutButton").click(function () {
+            loggedIn = false;
+            sessionStorage.setItem("isLoggedIn", "false"); // Set the loggedIn status to false in session storage
+            showLoginWindow();
+        });
     });
 });
 
