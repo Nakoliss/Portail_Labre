@@ -1,27 +1,9 @@
-/* $(function () {
-    $("#navbar").load("navbar.html");
-
-    const portalMessage = localStorage.getItem("portalMessage");
-    if (portalMessage) {
-        document.getElementById("message").value = portalMessage;
-    }
-
-    document
-        .getElementById("messageForm")
-        .addEventListener("submit", function (event) {
-            event.preventDefault();
-            const message = document.getElementById("message").value;
-            localStorage.setItem("portalMessage", message);
-            window.location.href = "index.html";
-        });
-}); */
-
 $(function () {
     $("#navbar").load("navbar.html");
 
     // Check if a message exists in the database
     $.ajax({
-        url: "getMessage.php", // Replace with the actual endpoint to fetch the message
+        url: "http://192.168.4.33:3000/api/getMessage",
         method: "GET",
         success: function (response) {
             var message = response.message;
@@ -43,9 +25,10 @@ $(function () {
 
         // Send an AJAX request to update the message in the database
         $.ajax({
-            url: "updateMessage.php", // Replace with the actual endpoint to update the message
+            url: "http://192.168.4.33:3000/api/updateMessage",
             method: "POST",
-            data: { message: message },
+            contentType: "application/json",
+            data: JSON.stringify({ message: message }),
             success: function (response) {
                 console.log("Message updated successfully!");
             },
