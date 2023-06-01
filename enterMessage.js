@@ -18,23 +18,31 @@ $(function () {
         },
     });
 
-    $("#messageForm").submit(function (event) {
-        event.preventDefault();
+    $(function () {
+        // ...
 
-        var message = $("#message").val();
+        $("#messageForm").submit(function (event) {
+            event.preventDefault();
 
-        // Send an AJAX request to update the message in the database
-        $.ajax({
-            url: "http://192.168.4.33:3000/api/updateMessage",
-            method: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({ message: message }),
-            success: function (response) {
-                console.log("Message updated successfully!");
-            },
-            error: function (xhr, status, error) {
-                console.log("Error updating message:", error);
-            },
+            var message = $("#message").val();
+            var owner = "Gru"; // Set the owner to "Gru" for now
+
+            // Send an AJAX request to update the message in the database
+            $.ajax({
+                url: "http://192.168.4.33:3000/api/updateMessage",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ message: message, owner: owner }), // Include the owner in the request
+                success: function (response) {
+                    console.log("Message updated successfully!");
+
+                    // Redirect to index.html
+                    window.location.href = "index.html";
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error updating message:", error);
+                },
+            });
         });
     });
 });
